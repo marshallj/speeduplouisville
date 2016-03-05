@@ -52,7 +52,7 @@
 - name: Deploy configuration files
   copy: src=conf/ dest=/ owner=root group=root
 - name: Fix postgres configuration permissions
-  file: path=/etc/postgresql/9.4/main/pg_hba.conf state=file owner=postgres group=postgres mode=0640
+  file: path=/etc/postgresql/9.3/main/pg_hba.conf state=file owner=postgres group=postgres mode=0640
 - name: Restart services
   service: name={{ item }} state=restarted
   with_items: 
